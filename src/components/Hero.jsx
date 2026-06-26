@@ -1,15 +1,40 @@
+import { useEffect, useState } from "react";
 import { useLang } from "../context/LangContext.jsx";
 import { useTypewriter } from "../hooks/useTypewriter.js";
+import { useTypewriterSequence } from "../hooks/useTypewriterSequence.js";
 import { ArrowIcon } from "./Icons.jsx";
 
 // Signature element: a terminal window that "boots up" by typing `whoami`,
-// then prints the profile as command output. The page's thesis.
+// then prints the profile as command output — line by line, like a real
+// terminal. The page's thesis.
 export default function Hero() {
   const { t, lang } = useLang();
   const { hero } = t;
 
-  // Re-key the typewriter per language so it re-types on switch.
-  const { output, done } = useTypewriter(hero.command, { speed: 110});
+  // 1) Type the `whoami` command.
+  const { output, done: commandDone } = useTypewriter(hero.command, {
+    speed: 110,
+  });
+
+  // 2) Once the command lands, print the output lines one after another:
+  //    the name, then each role line. Held until the command finishes.
+  const outputLines = [hero.name, ...hero.roleLines];
+  const { outputs, done: outputDone } = useTypewriterSequence(outputLines, {
+    enabled: commandDone,
+  });
+
+  // The blinking caret lives on the line currently being typed.
+  const activeLine = outputs.length - 1;
+
+  // Reveal the tagline + CTAs with the shared .reveal transition instead of
+  // snapping them in the instant the typing finishes. Mount first (opacity 0),
+  // then flip to .is-visible on the next frame so the transition plays.
+  const [outroVisible, setOutroVisible] = useState(false);
+  useEffect(() => {
+    if (!outputDone) return;
+    const id = setTimeout(() => setOutroVisible(true), 30);
+    return () => clearTimeout(id);
+  }, [outputDone]);
 
   return (
     <section
@@ -45,27 +70,43 @@ export default function Hero() {
             <span className="text-strong" key={lang}>
               {output}
             </span>
-            {!done && <span className="blink ml-0.5 text-fn">▍</span>}
+            {!commandDone && <span className="blink ml-0.5 text-fn">▍</span>}
           </div>
 
-          {done && (
-            <div className="reveal is-visible mt-4 space-y-1.5 pl-0 sm:pl-2">
-              <h1 className="font-sans text-3xl font-semibold tracking-tight text-strong sm:text-5xl">
-                {hero.name}
-              </h1>
-              {hero.roleLines.map((line) => (
-                <p key={line} className="text-comment">
-                  <span className="text-kw">{"> "}</span>
-                  {line}
-                </p>
-              ))}
+          {commandDone && (
+            <div className="mt-4 space-y-1.5 pl-0 sm:pl-2">
+              {outputs[0] !== undefined && (
+                <h1 className="font-sans text-3xl font-semibold tracking-tight text-strong sm:text-5xl">
+                  {outputs[0]}
+                  {!outputDone && activeLine === 0 && (
+                    <span className="blink ml-1 align-middle text-2xl text-fn sm:text-4xl">
+                      ▍
+                    </span>
+                  )}
+                </h1>
+              )}
+              {hero.roleLines.map((line, i) => {
+                const idx = i + 1;
+                if (outputs[idx] === undefined) return null;
+                return (
+                  <p key={line} className="text-comment">
+                    <span className="text-kw">{"> "}</span>
+                    {outputs[idx]}
+                    {!outputDone && activeLine === idx && (
+                      <span className="blink ml-0.5 text-fn">▍</span>
+                    )}
+                  </p>
+                );
+              })}
             </div>
           )}
         </div>
       </div>
 
-      {done && (
-        <div className="reveal is-visible mt-8 max-w-2xl">
+      {outputDone && (
+        <div
+          className={`reveal ${outroVisible ? "is-visible" : ""} mt-8 max-w-2xl`}
+        >
           <p className="text-lg text-text sm:text-xl">{hero.tagline}</p>
           <p className="mt-3 font-mono text-sm text-comment">
             <span className="text-fn">●</span> {hero.stat}
