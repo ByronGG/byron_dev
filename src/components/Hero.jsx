@@ -9,7 +9,7 @@ export default function Hero() {
   const { hero } = t;
 
   // Re-key the typewriter per language so it re-types on switch.
-  const { output, done } = useTypewriter(hero.command, { speed: 70 });
+  const { output, done } = useTypewriter(hero.command, { speed: 110});
 
   return (
     <section

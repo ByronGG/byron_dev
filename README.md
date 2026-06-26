@@ -1,16 +1,44 @@
-# React + Vite
+# Portafolio — Luis Alardin
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Landing page personal de **Luis Alardin**, Ingeniero en Sistemas Computacionales y desarrollador Full-Stack. Una sola página con estética de terminal / IDE, bilingüe (español / inglés) y construida con React 19, Vite 8 y Tailwind CSS v4.
 
-Currently, two official plugins are available:
+## Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **React 19** + JSX
+- **Vite 8** (HMR, build)
+- **Tailwind CSS v4** vía el plugin `@tailwindcss/vite` (sin `tailwind.config.js`)
+- **Oxlint** como linter
 
-## React Compiler
+## Scripts
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```bash
+npm install        # instalar dependencias
+npm run dev        # servidor de desarrollo con HMR
+npm run build      # build de producción en dist/
+npm run preview    # servir el build de dist/ localmente
+npm run lint       # ejecutar Oxlint
+```
 
-## Expanding the Oxlint configuration
+> No hay suite de pruebas. Los cambios se verifican con el servidor de desarrollo y `npm run lint`.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+## Estructura
+
+```
+src/
+├── content/content.js     # Todo el contenido (CONTENT por idioma + SOCIALS, SKILL_GROUPS)
+├── context/LangContext.jsx# Contexto de idioma (en/es), persistido en localStorage
+├── components/            # Section, TopBar, Hero, About, Skills, Experience, Projects, Contact, Footer…
+├── hooks/                 # useReveal, useTypewriter, usePrefersReducedMotion
+├── index.css             # Design tokens de Tailwind v4 (@theme)
+├── App.jsx               # Orden de secciones, envuelto en LangProvider
+└── main.jsx              # Punto de entrada
+```
+
+### Detalles clave
+
+- **Contenido desacoplado:** toda la copia vive en `src/content/content.js`, indexada por idioma. Los componentes no contienen texto literal — lo leen con `useLang()`. Para editar copy, cambia **ambos** idiomas (`en` y `es`).
+- **Bilingüe:** `LangContext` provee `{ lang, setLang, toggle, t }` y persiste la elección en `localStorage` (`portfolio-lang`).
+- **Animaciones:** centralizadas en hooks y respetan `prefers-reduced-motion` (revelado al hacer scroll, efecto máquina de escribir).
+- **Estilos:** sistema de diseño en `src/index.css` (`@theme`) con estética terminal/IDE; los acentos mapean a roles de token (`kw`, `str`, `fn`).
+
+`ABOUTME.md` es la fuente canónica de la bio, skills y proyectos; `content.js` es su derivación estructurada.
