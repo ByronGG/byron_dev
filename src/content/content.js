@@ -148,18 +148,18 @@ export const CONTENT = {
           name: "ERP Platform",
           summary:
             "Web platform for managing a company's operations and internal processes, deployed on a VPS.",
-          tech: ["Django", "Python", "PostgreSQL", "Nginx", "Gunicorn", "Docker"],
+          tech: ["Django", "Python", "PostgreSQL", "Nginx", "Gunicorn", "Docker", "FastAPI", "Ubuntu", "Plesk"],
         },
         {
           name: "CRM Automations",
           summary:
             "Workflows that capture contacts from email, classify them with AI and send personalized outreach.",
-          tech: ["n8n", "OpenAI", "Python"],
+          tech: ["n8n", "OpenAI", "Python", "Claude Routines"],
         },
         {
           name: "Mobile Companion App",
           summary: "Companion mobile app integrated with the ERP ecosystem.",
-          tech: ["Flutter", "Dart"],
+          tech: ["Flutter", "Dart", "Firebase"],
         },
         {
           name: "Developer Portfolio",
@@ -250,7 +250,7 @@ export const CONTENT = {
           name: "Plataforma ERP",
           summary:
             "Plataforma web para gestionar las operaciones y procesos internos de una empresa, desplegada en un VPS.",
-          tech: ["Django", "Python", "PostgreSQL", "Nginx", "Gunicorn", "Docker"],
+          tech: ["Django", "Python", "PostgreSQL", "Nginx", "Gunicorn", "Docker", "FastAPI", "Ubuntu", "Plesk"],
         },
         {
           name: "Automatizaciones CRM",
@@ -261,7 +261,7 @@ export const CONTENT = {
         {
           name: "App Móvil Complementaria",
           summary: "App móvil integrada con el ecosistema del ERP.",
-          tech: ["Flutter", "Dart"],
+          tech: ["Flutter", "Dart", "Firebase"],
         },
         {
           name: "Portafolio de Desarrollador",
