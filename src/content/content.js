@@ -256,7 +256,7 @@ export const CONTENT = {
           name: "Automatizaciones CRM",
           summary:
             "Flujos que capturan contactos desde el correo, los clasifican con IA y envían seguimiento personalizado.",
-          tech: ["n8n", "OpenAI", "Python"],
+          tech: ["n8n", "OpenAI", "Python", "Claude Routines"],
         },
         {
           name: "App Móvil Complementaria",
