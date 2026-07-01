@@ -12,8 +12,8 @@ export const SOCIALS = [
   {
     id: "linkedin",
     label: "LinkedIn",
-    handle: "luis-fernando-salas-alardin",
-    href: "https://www.linkedin.com/in/luis-fernando-salas-alardin-1b2992287/",
+    handle: "luisalardin",
+    href: "https://www.linkedin.com/in/luisalardin/",
   },
   {
     id: "instagram",
@@ -29,7 +29,7 @@ export const SKILL_GROUPS = [
   {
     id: "languages",
     role: "kw",
-    items: ["Python", "TypeScript", "JavaScript", "HTML5", "CSS3", "Dart", "Java", "C++"],
+    items: ["Python", "TypeScript", "JavaScript", "HTML5", "CSS3", "Dart", "C#", "Java", "C++", "PHP"],
   },
   {
     id: "frameworks",
@@ -41,16 +41,20 @@ export const SKILL_GROUPS = [
       "Bootstrap",
       "Django",
       "FastAPI",
+      "Laravel",
       "Flask",
       "Flutter",
       "Node.js",
+      "Next.js",
+      "NestJS",
       "GraphQL",
+      "Prisma",
     ],
   },
   {
     id: "databases",
     role: "fn",
-    items: ["PostgreSQL", "MySQL", "SQLite", "Firebase"],
+    items: ["PostgreSQL", "MySQL", "SQLite", "Firebase", "MongoDB"],
   },
   {
     id: "devops",
@@ -65,17 +69,31 @@ export const SKILL_GROUPS = [
       "Plesk",
       "Vercel",
       "Raspberry Pi",
+      "Arduino",
+      "Windows Terminal",
+      "PowerShell",
     ],
   },
   {
     id: "ai",
     role: "str",
-    items: ["n8n", "Ollama", "OpenAI"],
+    items: ["n8n", "Ollama", "OpenAI", "Claude Routines"],
   },
   {
     id: "tools",
     role: "fn",
-    items: ["Git", "GitHub", "VS Code", "Visual Studio", "PyCharm", "Figma"],
+    items: [
+      "Git",
+      "GitHub",
+      "VS Code",
+      "Visual Studio",
+      "Claude Code",
+      "NetBeans",
+      "JetBrains",
+      "IntelliJ IDEA",
+      "PyCharm",
+      "Figma",
+    ],
   },
 ];
 
