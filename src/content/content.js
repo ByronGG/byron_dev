@@ -183,9 +183,11 @@ export const CONTENT = {
           url: "https://askql.vercel.app/",
         },
         {
-          name: "Developer Portfolio",
-          summary: "Personal landing page showcasing my work and skills.",
-          tech: ["React", "Vite", "Tailwind CSS"],
+          name: "Trato-CRM",
+          summary:
+            "Multi-tenant CRM for agencies — contacts, deals, proposals, projects and invoices — with strict per-account data isolation, JWT auth and scheduled reminders.",
+          tech: ["NestJS", "React", "TypeScript", "PostgreSQL", "Prisma", "Tailwind CSS", "Docker"],
+          url: "https://trato-crm-virid.vercel.app/login",
         },
       ],
     },
@@ -288,9 +290,11 @@ export const CONTENT = {
           url: "https://askql.vercel.app/",
         },
         {
-          name: "Portafolio de Desarrollador",
-          summary: "Landing page personal que muestra mi trabajo y habilidades.",
-          tech: ["React", "Vite", "Tailwind CSS"],
+          name: "Trato-CRM",
+          summary:
+            "CRM multi-cuenta para agencias —contactos, negocios, propuestas, proyectos y facturas— con aislamiento estricto de datos por cuenta, autenticación JWT y recordatorios automáticos.",
+          tech: ["NestJS", "React", "TypeScript", "PostgreSQL", "Prisma", "Tailwind CSS", "Docker"],
+          url: "https://trato-crm-virid.vercel.app/login",
         },
       ],
     },

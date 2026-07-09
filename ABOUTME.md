@@ -105,7 +105,7 @@ I'm a **Computer Systems Engineer** and **Full-Stack Developer** with **2+ years
 | **ERP Platform** | Web platform (ERP) for managing a company's operations and internal processes, deployed on a VPS. | `Django` `Python` `PostgreSQL` `Nginx` `Gunicorn` `Docker` |
 | **CRM Automations** | Automation workflows that capture contacts from email, classify them with AI and send personalized outreach. | `n8n` `OpenAI` `Python` |
 | **[AskQL](https://askql.vercel.app/)** | Text-to-SQL tool: upload a CSV/Excel file, ask in natural language, and an LLM turns your schema into SQL that runs in-browser — your data never leaves it. | `Next.js` `TypeScript` `Tailwind CSS` `DuckDB` `SheetJS` |
-| **Developer Portfolio** | Personal landing page showcasing my work and skills. | `React` `Vite` `TypeScript` `Tailwind CSS` |
+| **[Trato-CRM](https://trato-crm-virid.vercel.app/login)** | Multi-tenant CRM for agencies (contacts, deals, proposals, projects, invoices) with strict per-account data isolation, JWT auth and scheduled reminders. | `NestJS` `React` `TypeScript` `PostgreSQL` `Prisma` `Tailwind CSS` `Docker` |
 
 <!-- Tip: replace the project names with links to their repos, e.g. **[ERP Platform](https://github.com/ByronGG/your-repo)** -->
 <!-- And feel free to rename each project to its real name. -->
