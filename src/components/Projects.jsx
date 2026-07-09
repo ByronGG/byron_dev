@@ -1,6 +1,20 @@
 import { useLang } from "../context/LangContext.jsx";
+import { SKILL_ROLES } from "../content/content.js";
 import Section from "./Section.jsx";
 import { ArrowIcon } from "./Icons.jsx";
+
+// Token-role → chip color classes, matching the Skills grid. Kept as whole
+// class strings so Tailwind's JIT detects them. A tech that isn't listed as a
+// skill (no role) falls back to the neutral chip.
+const TECH_ROLE_CLASSES = {
+  kw: "border-kw/25 bg-kw/10 text-kw",
+  str: "border-str/25 bg-str/10 text-str",
+  fn: "border-fn/25 bg-fn/10 text-fn",
+  op: "border-op/25 bg-op/10 text-op",
+  at: "border-at/25 bg-at/10 text-at",
+  ty: "border-ty/25 bg-ty/10 text-ty",
+};
+const TECH_FALLBACK = "border-border bg-ink/60 text-comment";
 
 function ProjectCard({ project, index }) {
   return (
@@ -39,7 +53,9 @@ function ProjectCard({ project, index }) {
           {project.tech.map((tech) => (
             <li
               key={tech}
-              className="rounded border border-border bg-ink/60 px-2 py-0.5 font-mono text-[12px] text-comment"
+              className={`rounded border px-2 py-0.5 font-mono text-[12px] transition-colors ${
+                TECH_ROLE_CLASSES[SKILL_ROLES[tech]] ?? TECH_FALLBACK
+              }`}
             >
               {tech}
             </li>

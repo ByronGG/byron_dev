@@ -7,6 +7,9 @@ const ROLE_CLASSES = {
   kw: "border-kw/25 bg-kw/10 text-kw hover:border-kw/60",
   str: "border-str/25 bg-str/10 text-str hover:border-str/60",
   fn: "border-fn/25 bg-fn/10 text-fn hover:border-fn/60",
+  op: "border-op/25 bg-op/10 text-op hover:border-op/60",
+  at: "border-at/25 bg-at/10 text-at hover:border-at/60",
+  ty: "border-ty/25 bg-ty/10 text-ty hover:border-ty/60",
 };
 
 export default function Skills() {

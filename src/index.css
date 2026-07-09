@@ -15,6 +15,9 @@
   --color-kw: #b69cff; /* keyword — structural markers / nav */
   --color-str: #58c7b0; /* string — links / data values */
   --color-fn: #f2b05e; /* function — primary CTA / emphasis */
+  --color-op: #6cb6ff; /* operator — infra / DevOps & cloud */
+  --color-at: #e78fce; /* annotation — automation & AI */
+  --color-ty: #7cc98a; /* type — tooling & design */
 
   --font-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Consolas,
     monospace;

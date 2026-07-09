@@ -49,16 +49,17 @@ export const SKILL_GROUPS = [
       "NestJS",
       "GraphQL",
       "Prisma",
+      "SheetJS",
     ],
   },
   {
     id: "databases",
     role: "fn",
-    items: ["PostgreSQL", "MySQL", "SQLite", "Firebase", "MongoDB"],
+    items: ["PostgreSQL", "MySQL", "SQLite", "Firebase", "MongoDB", "DuckDB"],
   },
   {
     id: "devops",
-    role: "kw",
+    role: "op",
     items: [
       "Docker",
       "Nginx",
@@ -76,12 +77,12 @@ export const SKILL_GROUPS = [
   },
   {
     id: "ai",
-    role: "str",
+    role: "at",
     items: ["n8n", "Ollama", "OpenAI", "Claude Routines"],
   },
   {
     id: "tools",
-    role: "fn",
+    role: "ty",
     items: [
       "Git",
       "GitHub",
@@ -96,6 +97,15 @@ export const SKILL_GROUPS = [
     ],
   },
 ];
+
+// Flat lookup: skill name → its group's token role. Lets other sections
+// (e.g. project tech chips) color a technology the same as the Skills grid.
+// Techs not present here (not listed as a skill) simply get no role.
+export const SKILL_ROLES = Object.fromEntries(
+  SKILL_GROUPS.flatMap((group) =>
+    group.items.map((item) => [item, group.role]),
+  ),
+);
 
 export const CONTENT = {
   en: {
