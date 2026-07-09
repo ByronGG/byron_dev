@@ -1,5 +1,6 @@
 import { useLang } from "../context/LangContext.jsx";
 import Section from "./Section.jsx";
+import { ArrowIcon } from "./Icons.jsx";
 
 function ProjectCard({ project, index }) {
   return (
@@ -12,9 +13,22 @@ function ProjectCard({ project, index }) {
             {project.name.toLowerCase().replace(/\s+/g, "-")}
           </span>
         </span>
-        <span className="text-comment transition-colors group-hover:text-fn">
-          ●
-        </span>
+        {project.url ? (
+          <a
+            href={project.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`Open ${project.name} (opens in a new tab)`}
+            className="inline-flex items-center gap-1 text-comment transition-colors hover:text-fn"
+          >
+            live
+            <ArrowIcon className="h-3.5 w-3.5 -rotate-45" />
+          </a>
+        ) : (
+          <span className="text-comment transition-colors group-hover:text-fn">
+            ●
+          </span>
+        )}
       </div>
 
       <div className="flex flex-1 flex-col p-5 sm:p-6">

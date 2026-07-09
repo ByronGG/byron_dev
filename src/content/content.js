@@ -167,6 +167,7 @@ export const CONTENT = {
           summary:
             "Web platform for managing a company's operations and internal processes, deployed on a VPS.",
           tech: ["Django", "Python", "PostgreSQL", "Nginx", "Gunicorn", "Docker", "FastAPI", "Ubuntu", "Plesk"],
+          url: "https://platform.hyteck.mx",
         },
         {
           name: "CRM Automations",
@@ -175,9 +176,11 @@ export const CONTENT = {
           tech: ["n8n", "OpenAI", "Python", "Claude Routines"],
         },
         {
-          name: "Mobile Companion App",
-          summary: "Companion mobile app integrated with the ERP ecosystem.",
-          tech: ["Flutter", "Dart", "Firebase"],
+          name: "AskQL",
+          summary:
+            "Text-to-SQL tool: upload a CSV or Excel file, ask a question in plain language, and an LLM turns your schema into SQL that runs in the browser — your data never leaves it.",
+          tech: ["Next.js", "TypeScript", "Tailwind CSS", "DuckDB", "SheetJS"],
+          url: "https://askql.vercel.app/",
         },
         {
           name: "Developer Portfolio",
@@ -269,6 +272,7 @@ export const CONTENT = {
           summary:
             "Plataforma web para gestionar las operaciones y procesos internos de una empresa, desplegada en un VPS.",
           tech: ["Django", "Python", "PostgreSQL", "Nginx", "Gunicorn", "Docker", "FastAPI", "Ubuntu", "Plesk"],
+          url: "https://platform.hyteck.mx",
         },
         {
           name: "Automatizaciones CRM",
@@ -277,9 +281,11 @@ export const CONTENT = {
           tech: ["n8n", "OpenAI", "Python", "Claude Routines"],
         },
         {
-          name: "App Móvil Complementaria",
-          summary: "App móvil integrada con el ecosistema del ERP.",
-          tech: ["Flutter", "Dart", "Firebase"],
+          name: "AskQL",
+          summary:
+            "Herramienta de texto a SQL: sube un archivo CSV o Excel, pregunta en lenguaje natural y un LLM convierte tu esquema en SQL que se ejecuta en el navegador — tus datos nunca salen de él.",
+          tech: ["Next.js", "TypeScript", "Tailwind CSS", "DuckDB", "SheetJS"],
+          url: "https://askql.vercel.app/",
         },
         {
           name: "Portafolio de Desarrollador",
